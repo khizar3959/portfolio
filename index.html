@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khizar Hayat | Electrical Engineer & AI Developer</title>
+  <meta name="description" content="Portfolio of Khizar Hayat - Electrical Engineer (UET Peshawar) and AI/ML Developer building LLM agents, predictive models, and full-stack web applications.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080c14',
+              surface: '#0f172a',
+              cyan: '#06b6d4',
+              blue: '#3b82f6',
+              indigo: '#6366f1',
+              emerald: '#10b981'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & FontAwesome for crisp vectors -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#080c14] text-slate-100 antialiased selection:bg-cyan-500 selection:text-black min-h-screen">
+
+  <!-- Toast Notification for Email Copy -->
+  <div id="copyToast" class="fixed bottom-6 right-6 z-50 glass-panel px-4 py-3 rounded-xl shadow-2xl border border-cyan-500/40 text-cyan-300 flex items-center space-x-3 opacity-0 pointer-events-none transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+    <span class="text-sm font-medium">Email copied: khizar3959@gmail.com</span>
+  </div>
+
+  <!-- Ambient Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-slate-800/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo / Monogram -->
+      <a href="#hero" class="flex items-center space-x-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600 p-[1px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition">
+          <div class="w-full h-full bg-[#080c14] rounded-[11px] flex items-center justify-center font-mono font-bold text-lg text-cyan-400 group-hover:text-white transition">
+            KH
+          </div>
+        </div>
+        <div>
+          <span class="text-lg font-bold tracking-tight text-white block group-hover:text-cyan-400 transition">Khizar Hayat</span>
+          <span class="text-xs text-slate-400 font-mono">EE • AI Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition">About</a>
+        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+        <a href="#services" class="hover:text-cyan-400 transition">Services</a>
+        <a href="#education" class="hover:text-cyan-400 transition">Education</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex items-center space-x-3">
+        <a href="https://github.com/khizar3959" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition" title="GitHub Profile">
+          <i class="fa-brands fa-github text-lg"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/khizar-hayat-513a5ab6/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition" title="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin-in text-lg"></i>
+        </a>
+        <a href="https://wa.me/923026784114?text=Hi%20Khizar,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white text-sm font-semibold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition flex items-center space-x-2">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-slate-400 hover:text-white p-2" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileNav" class="hidden md:hidden glass-panel border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="#about" class="block text-slate-300 hover:text-cyan-400 py-1 text-base">About</a>
+      <a href="#projects" class="block text-slate-300 hover:text-cyan-400 py-1 text-base">Projects</a>
+      <a href="#skills" class="block text-slate-300 hover:text-cyan-400 py-1 text-base">Skills</a>
+      <a href="#services" class="block text-slate-300 hover:text-cyan-400 py-1 text-base">Services</a>
+      <a href="#education" class="block text-slate-300 hover:text-cyan-400 py-1 text-base">Education</a>
+      <a href="#contact" class="block text-slate-300 hover:text-cyan-400 py-1 text-base">Contact</a>
+      <div class="pt-4 border-t border-slate-800 flex items-center space-x-3">
+        <a href="https://wa.me/923026784114" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-emerald-500 text-white font-medium flex items-center justify-center space-x-2">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Message on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Interactive Particle Canvas -->
+  <section id="hero" class="relative pt-36 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
+    <canvas id="networkCanvas"></canvas>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-8">
+          <!-- Status Pill -->
+          <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-xs font-mono text-emerald-300 mb-6">
+            <span class="pulse-indicator"></span>
+            <span>#OpenToWork • On-site, Hybrid & Remote (Pakistan & Global)</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight sm:leading-none mb-6">
+            Building Real-World <br class="hidden sm:block" />
+            <span class="text-gradient-cyan">AI Solutions</span> & Web Platforms.
+          </h1>
+
+          <!-- Subtitle / Headline from LinkedIn -->
+          <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-8 max-w-2xl">
+            Hi, I'm <strong class="text-white font-semibold">Khizar Hayat</strong> — an <strong>Electrical Engineer</strong> from <strong>UET Peshawar</strong> and an <strong>AI Enthusiast</strong> developing autonomous LLM agents, predictive machine learning models, and full-stack software.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 items-center">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold text-base shadow-xl shadow-cyan-500/25 transition flex items-center space-x-2">
+              <span>Explore Projects</span>
+              <i class="fa-solid fa-arrow-down-long text-sm"></i>
+            </a>
+
+            <a href="https://wa.me/923026784114?text=Hi%20Khizar,%20I'm%20reaching%20out%20regarding%20an%20opportunity" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl glass-panel hover:bg-slate-800 text-white font-semibold text-base border border-slate-700 hover:border-emerald-500/50 transition flex items-center space-x-2.5 text-emerald-400">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span class="text-slate-100">+92 302 6784114</span>
+            </a>
+
+            <button id="copyEmailBtn" class="px-4 py-3.5 rounded-xl glass-panel hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-sm border border-slate-700 hover:border-cyan-500/50 transition flex items-center space-x-2" title="Click to copy email">
+              <i class="fa-regular fa-envelope text-cyan-400"></i>
+              <span>khizar3959@gmail.com</span>
+              <i class="fa-regular fa-copy text-xs text-slate-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Profile Visual Card -->
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="relative group">
+            <!-- Ambient Glow -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-emerald-500 to-indigo-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-500"></div>
+            
+            <div class="relative glass-panel rounded-3xl p-6 border border-slate-700/80 text-center max-w-xs shadow-2xl">
+              <!-- Avatar with Ring -->
+              <div class="relative w-36 h-36 mx-auto mb-4">
+                <div class="w-full h-full rounded-full p-[3px] bg-gradient-to-tr from-emerald-400 via-cyan-400 to-blue-500 shadow-xl shadow-cyan-500/20">
+                  <img src="profile.png" alt="Khizar Hayat" class="w-full h-full object-cover rounded-full bg-slate-900">
+                </div>
+                <!-- OpenToWork Badge -->
+                <div class="absolute bottom-0 right-0 px-2 py-0.5 rounded-full bg-emerald-500 text-black text-[10px] font-bold tracking-tight uppercase shadow-lg border border-white/40">
+                  #OpenToWork
+                </div>
+              </div>
+
+              <h2 class="text-xl font-bold text-white">Khizar Hayat</h2>
+              <p class="text-xs text-cyan-400 font-mono mt-1">Electrical Engineer • AI Enthusiast</p>
+              <p class="text-xs text-slate-400 mt-2 flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-graduation-cap text-cyan-400"></i>
+                <span>UET Peshawar</span>
+              </p>
+              <p class="text-xs text-slate-400 mt-1 flex items-center justify-center space-x-1.5">
+                <i class="fa-solid fa-location-dot text-rose-400"></i>
+                <span>Pakistan</span>
+              </p>
+
+              <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-center space-x-3">
+                <a href="https://www.linkedin.com/in/khizar-hayat-513a5ab6/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30 text-xs font-mono transition flex items-center space-x-1.5">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/khizar3959" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono transition flex items-center space-x-1.5">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social Proof Stats Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14 pt-8 border-t border-slate-800/80">
+        <div class="glass-panel p-4 rounded-xl border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">93.55%</div>
+          <div class="text-xs text-slate-400 mt-1">Model Accuracy ($R^2$)</div>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono">7+</div>
+          <div class="text-xs text-slate-400 mt-1">Engineered Systems</div>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">UET</div>
+          <div class="text-xs text-slate-400 mt-1">Peshawar (Electrical Eng.)</div>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">LLM+RAG</div>
+          <div class="text-xs text-slate-400 mt-1">Production AI Agents</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Services & Solutions (from LinkedIn) -->
+  <section id="services" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Services & Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">What I Bring to Your Team</h2>
+        <p class="text-slate-400 mt-2 text-sm">
+          Tailored engineering services across custom software, machine learning, analytics, and full-stack systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Service 1: Custom Software Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Custom Software Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Engineering robust web platforms, automated business tools, and scalable SaaS architectures tailored to complex operational workflows.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">SaaS Systems</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">APIs</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Business Analytics & Predictive AI -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-4">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Business Analytics</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Unlocking predictive insights, sales forecasting models (like SalesPro AI), and trend analysis to drive data-informed decision-making.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Predictive ML</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Forecasting</span>
+          </div>
+        </div>
+
+        <!-- Service 3: Web Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-4">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Web Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Modern, responsive front-ends and full-stack solutions built with Next.js 14, React, Vite, and Tailwind CSS with high performance.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">Next.js 14</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">PWAs</span>
+          </div>
+        </div>
+
+        <!-- Service 4: Database Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Database Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Designing schema models, real-time Google Sheets API sync pipelines, and data persistence layers for customer and inventory tracking.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Pipelines</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">API Sync</span>
+          </div>
+        </div>
+
+        <!-- Service 5: IT Consulting -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">IT Consulting</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Advising on AI feasibility, LLM agent integration (Gemini, RAG), modern tech stack selection, and software architecture planning.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">AI Strategy</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">Architecture</span>
+          </div>
+        </div>
+
+        <!-- Service 6: Technical Support & Project Management -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Technical Support & Management</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            End-to-end milestone management, code maintenance, Vercel/cloud deployments, and continuous system support.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Delivery</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Maintenance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projects" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Portfolio Showcase</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Featured Projects & Live Systems</h2>
+          <p class="text-slate-400 mt-2 text-base max-w-xl">
+            A collection of deployed SaaS platforms, AI-driven autonomous agents, and predictive machine learning models.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 mt-6 md:mt-0 font-mono text-xs">
+          <button class="filter-btn active px-3.5 py-2 rounded-lg glass-panel border border-slate-700 hover:border-cyan-500 transition text-slate-300" data-filter="all">All</button>
+          <button class="filter-btn px-3.5 py-2 rounded-lg glass-panel border border-slate-700 hover:border-cyan-500 transition text-slate-300" data-filter="featured">Featured SaaS</button>
+          <button class="filter-btn px-3.5 py-2 rounded-lg glass-panel border border-slate-700 hover:border-cyan-500 transition text-slate-300" data-filter="ai">AI & LLMs</button>
+          <button class="filter-btn px-3.5 py-2 rounded-lg glass-panel border border-slate-700 hover:border-cyan-500 transition text-slate-300" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn px-3.5 py-2 rounded-lg glass-panel border border-slate-700 hover:border-cyan-500 transition text-slate-300" data-filter="web">Full-Stack Web</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+
+        <!-- Project 1: RavaanOps (Live SaaS) -->
+        <div class="project-card glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col justify-between border border-cyan-500/30 glow-card" data-category="featured web">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center space-x-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>LIVE SAAS PLATFORM</span>
+              </span>
+              <div class="text-orange-400 text-xl font-bold font-mono">🚛 RavaanOps</div>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Transport & Heavy Equipment Ops</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Enterprise logistics and machinery management web application. Features real-time fleet utilization tracking, equipment registries, vehicle maintenance & fuel logging, operator assignment, and configurable tax invoicing.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5 font-mono">
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Live Fleet & Machinery Tracking</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Configurable Rental Tax Invoicing</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>PWA Offline Architecture & Permits</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">React</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">Vite</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">PWA</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="https://ravaanops.vercel.app/access" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-400 hover:to-amber-500 text-white font-semibold text-sm shadow-lg shadow-orange-500/20 transition flex items-center justify-center space-x-2">
+              <span>Launch Live App</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: AI E-Commerce Support Agent (Rag-chatbot) -->
+        <div class="project-card glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col justify-between border border-slate-800" data-category="featured ai">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                GEMINI AI + RAG
+              </span>
+              <span class="text-slate-400 text-sm font-mono"><i class="fa-brands fa-google text-cyan-400 mr-1"></i>Gemini Flash</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Autonomous E-Commerce AI Support</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Production-ready customer support agent. Parses official company policies from Word (<code class="text-cyan-300">.docx</code>) documents via Mammoth, retrieves live inventory & orders from Google Sheets API, and executes automated refund logic.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5 font-mono">
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Context-Aware Policy Document RAG</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Two-Way Realtime Google Sheets Sync</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Automated Refund & Order Workflows</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">Next.js 14</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">Google Gemini</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">Google Sheets API</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-indigo-300 text-xs font-mono">Mammoth.js</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="https://github.com/khizar3959/Rag-chatbot" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 rounded-xl glass-panel hover:bg-slate-800 text-white font-medium text-sm border border-slate-700 hover:border-indigo-500/40 transition flex items-center justify-center space-x-2">
+              <i class="fa-brands fa-github text-base"></i>
+              <span>View GitHub Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: SalesPro AI -->
+        <div class="project-card glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col justify-between border border-slate-800" data-category="featured ml">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                93.55% R² ACCURACY
+              </span>
+              <span class="text-slate-400 text-sm font-mono"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i>Regression</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">SalesPro AI – Ad Spend Forecasting</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Predictive machine learning platform forecasting revenue potential based on multi-channel marketing spend across TV, Radio, and Newspaper channels, trained on 200+ real campaign datasets.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5 font-mono">
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Polynomial Regression Model</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Multi-Channel Budget Simulation</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Interactive Next.js Web Dashboard</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">Next.js</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">TypeScript</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">Scikit-Learn</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-cyan-300 text-xs font-mono">Python ML</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="https://github.com/khizar3959/SalesPro-AI" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 rounded-xl glass-panel hover:bg-slate-800 text-white font-medium text-sm border border-slate-700 hover:border-cyan-500/40 transition flex items-center justify-center space-x-2">
+              <i class="fa-brands fa-github text-base"></i>
+              <span>View GitHub Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Loan Approval Prediction System -->
+        <div class="project-card glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col justify-between border border-slate-800" data-category="ml web">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                FINTECH RISK MODEL
+              </span>
+              <span class="text-slate-400 text-sm font-mono">KNN Model</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Loan Approval Prediction System</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Full-stack credit risk evaluation system. Employs K-Nearest Neighbors (KNN) machine learning algorithms to assess applicant financial metrics, credit history, and income ratios to provide instant loan approval probabilities.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5 font-mono">
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>K-Nearest Neighbors Algorithm</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Train/Test Dataset Pipelines</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Next.js Full-Stack Architecture</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">Python</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">Next.js</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">TypeScript</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 text-xs font-mono">Jupyter</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="https://github.com/khizar3959/loan-approval-prediction" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 rounded-xl glass-panel hover:bg-slate-800 text-white font-medium text-sm border border-slate-700 hover:border-blue-500/40 transition flex items-center justify-center space-x-2">
+              <i class="fa-brands fa-github text-base"></i>
+              <span>View GitHub Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: House Price Prediction Engine -->
+        <div class="project-card glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col justify-between border border-slate-800" data-category="ml">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                SCIKIT-LEARN REGRESSION
+              </span>
+              <span class="text-slate-400 text-sm font-mono">Real Estate AI</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">House Price Prediction Model</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              End-to-end regression application for real estate valuation. Processes structural metrics, geographical variables, and historical housing dataset transactions to predict real-time home market values.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5 font-mono">
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Multi-Variable Regression Analysis</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Data Cleaning & Feature Engineering</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Python API & Prediction App</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-emerald-300 text-xs font-mono">Python</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-emerald-300 text-xs font-mono">Scikit-Learn</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-emerald-300 text-xs font-mono">Pandas</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-emerald-300 text-xs font-mono">NumPy</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="https://github.com/khizar3959/house-price-prediction" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 rounded-xl glass-panel hover:bg-slate-800 text-white font-medium text-sm border border-slate-700 hover:border-emerald-500/40 transition flex items-center justify-center space-x-2">
+              <i class="fa-brands fa-github text-base"></i>
+              <span>View GitHub Source</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: Juice Shop Dashboard & PWA -->
+        <div class="project-card glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col justify-between border border-slate-800" data-category="web">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                REACT + PWA
+              </span>
+              <span class="text-slate-400 text-sm font-mono">Operations App</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Juice Shop Operations Dashboard</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Progressive Web Application (PWA) with responsive dashboard views, operator controls, mobile navigation drawer, and local state management for quick retail sales and orders.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5 font-mono">
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>PWA Offline Caching & Manifest</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Modular React Component Structure</li>
+              <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Operator & Dashboard Views</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300 text-xs font-mono">React</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300 text-xs font-mono">Vite</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300 text-xs font-mono">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300 text-xs font-mono">PWA</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <a href="https://github.com/khizar3959/Juice-shop" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 rounded-xl glass-panel hover:bg-slate-800 text-white font-medium text-sm border border-slate-700 hover:border-amber-500/40 transition flex items-center justify-center space-x-2">
+              <i class="fa-brands fa-github text-base"></i>
+              <span>View GitHub Source</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Services & Solutions (from LinkedIn) -->
+  <section id="services" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Services & Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">What I Bring to Your Team</h2>
+        <p class="text-slate-400 mt-2 text-sm">
+          Tailored engineering services across custom software, machine learning, analytics, and full-stack systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Service 1: Custom Software Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Custom Software Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Engineering robust web platforms, automated business tools, and scalable SaaS architectures tailored to complex operational workflows.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">SaaS Systems</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">APIs</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Business Analytics & Predictive AI -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-4">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Business Analytics</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Unlocking predictive insights, sales forecasting models (like SalesPro AI), and trend analysis to drive data-informed decision-making.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Predictive ML</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Forecasting</span>
+          </div>
+        </div>
+
+        <!-- Service 3: Web Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-4">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Web Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Modern, responsive front-ends and full-stack solutions built with Next.js 14, React, Vite, and Tailwind CSS with high performance.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">Next.js 14</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">PWAs</span>
+          </div>
+        </div>
+
+        <!-- Service 4: Database Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Database Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Designing schema models, real-time Google Sheets API sync pipelines, and data persistence layers for customer and inventory tracking.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Pipelines</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">API Sync</span>
+          </div>
+        </div>
+
+        <!-- Service 5: IT Consulting -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">IT Consulting</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Advising on AI feasibility, LLM agent integration (Gemini, RAG), modern tech stack selection, and software architecture planning.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">AI Strategy</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">Architecture</span>
+          </div>
+        </div>
+
+        <!-- Service 6: Technical Support & Project Management -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Technical Support & Management</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            End-to-end milestone management, code maintenance, Vercel/cloud deployments, and continuous system support.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Delivery</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Maintenance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Engineering Philosophy Section -->
+  <section id="about" class="py-24 relative z-10 bg-slate-900/40 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Narrative -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Background & Mindset</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+            Where Electrical Engineering Meets Applied Artificial Intelligence.
+          </h2>
+          
+          <p class="text-slate-300 text-base leading-relaxed">
+            I hold a degree in <strong>Electrical Engineering</strong> from the prestigious <strong>University of Engineering and Technology (UET) Peshawar</strong>. My engineering training provided me with deep mathematical foundations in calculus, linear algebra, signals & systems, and control theory — the very building blocks that power modern machine learning and neural networks.
+          </p>
+
+          <p class="text-slate-300 text-base leading-relaxed">
+            Transitioning into software and AI engineering, I apply rigorous systems thinking to real-world software problems. Rather than merely training toy models, I design <strong>end-to-end architectures</strong>: integrating autonomous LLM agents with live external databases, engineering data pipelines for statistical accuracy, and building reactive web dashboards deployed for enterprise users.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="glass-panel p-4 rounded-xl border border-slate-800">
+              <div class="flex items-center space-x-3 mb-2">
+                <i class="fa-solid fa-microchip text-cyan-400 text-lg"></i>
+                <h4 class="font-bold text-white text-sm">Hardware & Systems Thinking</h4>
+              </div>
+              <p class="text-xs text-slate-400">Deep intuition for signals, computational efficiency, logic, and physical system constraints.</p>
+            </div>
+
+            <div class="glass-panel p-4 rounded-xl border border-slate-800">
+              <div class="flex items-center space-x-3 mb-2">
+                <i class="fa-solid fa-brain text-indigo-400 text-lg"></i>
+                <h4 class="font-bold text-white text-sm">Applied AI & Agentic RAG</h4>
+              </div>
+              <p class="text-xs text-slate-400">Context-aware LLM agents, retrieval augmented generation, and predictive ML algorithms.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Profile Card & Quick Info -->
+        <div class="lg:col-span-5">
+          <div class="glass-panel rounded-2xl p-8 border border-slate-700/80 glow-card relative">
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="relative w-16 h-16 rounded-2xl p-[2px] bg-gradient-to-tr from-cyan-500 to-indigo-600 shadow-lg shadow-cyan-500/20 flex-shrink-0">
+                <img src="profile.png" alt="Khizar Hayat" class="w-full h-full object-cover rounded-[14px] bg-slate-900">
+                <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-slate-900 flex items-center justify-center text-[8px] text-black font-bold" title="Open to Work">✓</span>
+              </div>
+              <div>
+                <div class="flex items-center space-x-2">
+                  <h3 class="text-xl font-bold text-white">Khizar Hayat</h3>
+                  <span class="text-cyan-400 text-xs" title="Verified Professional"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+                <p class="text-xs text-cyan-400 font-mono mt-0.5">Electrical Engineer | AI Enthusiast</p>
+                <p class="text-xs text-slate-400 mt-1 flex items-center space-x-1">
+                  <i class="fa-solid fa-building-columns text-slate-500 text-[10px]"></i>
+                  <span>UET Peshawar</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs border-t border-slate-800 pt-6">
+              <div class="flex items-center justify-between py-1.5 border-b border-slate-800/60">
+                <span class="text-slate-400">Degree:</span>
+                <span class="text-slate-200 font-semibold">B.Sc. Electrical Engineering</span>
+              </div>
+              <div class="flex items-center justify-between py-1.5 border-b border-slate-800/60">
+                <span class="text-slate-400">Alma Mater:</span>
+                <span class="text-slate-200 font-semibold">UET Peshawar</span>
+              </div>
+              <div class="flex items-center justify-between py-1.5 border-b border-slate-800/60">
+                <span class="text-slate-400">Email:</span>
+                <a href="mailto:khizar3959@gmail.com" class="text-cyan-400 hover:underline">khizar3959@gmail.com</a>
+              </div>
+              <div class="flex items-center justify-between py-1.5 border-b border-slate-800/60">
+                <span class="text-slate-400">WhatsApp:</span>
+                <a href="https://wa.me/923026784114" target="_blank" class="text-emerald-400 hover:underline">+92 302 6784114</a>
+              </div>
+              <div class="flex items-center justify-between py-1.5">
+                <span class="text-slate-400">GitHub:</span>
+                <a href="https://github.com/khizar3959" target="_blank" class="text-indigo-400 hover:underline">github.com/khizar3959</a>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+              <a href="https://www.linkedin.com/in/khizar-hayat-513a5ab6/" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30 font-medium text-xs flex items-center justify-center space-x-2 transition">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Connect on LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Matrix -->
+  <section id="skills" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Technical Expertise</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Core Competencies & Stack</h2>
+        <p class="text-slate-400 mt-2 text-sm">
+          A balanced synthesis of artificial intelligence, machine learning, modern web development, and hardware engineering fundamentals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Category 1: AI & LLMs -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">AI & LLM Systems</h3>
+          <ul class="space-y-2 text-xs text-slate-300 font-mono">
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-cyan-400 mr-2"></i>Google Gemini API</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-cyan-400 mr-2"></i>RAG (Retrieval Augmented)</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-cyan-400 mr-2"></i>Autonomous Agent Logic</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-cyan-400 mr-2"></i>Document Ingestion (Mammoth)</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-cyan-400 mr-2"></i>Context & Prompt Design</li>
+          </ul>
+        </div>
+
+        <!-- Category 2: Machine Learning -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-4">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Machine Learning</h3>
+          <ul class="space-y-2 text-xs text-slate-300 font-mono">
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-indigo-400 mr-2"></i>Polynomial Regression</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-indigo-400 mr-2"></i>K-Nearest Neighbors (KNN)</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-indigo-400 mr-2"></i>Scikit-Learn & Python</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-indigo-400 mr-2"></i>Pandas & NumPy Pipelines</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-indigo-400 mr-2"></i>Model Evaluation ($R^2$, MSE)</li>
+          </ul>
+        </div>
+
+        <!-- Category 3: Full-Stack Web -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-4">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Full-Stack Web</h3>
+          <ul class="space-y-2 text-xs text-slate-300 font-mono">
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-blue-400 mr-2"></i>Next.js 14 & React</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-blue-400 mr-2"></i>TypeScript & JavaScript</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-blue-400 mr-2"></i>Tailwind CSS & Responsive UI</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-blue-400 mr-2"></i>Vite & Progressive Web Apps</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-blue-400 mr-2"></i>REST APIs & Google Sheets API</li>
+          </ul>
+        </div>
+
+        <!-- Category 4: Electrical Engineering Foundations -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-3">Electrical Eng. Core</h3>
+          <ul class="space-y-2 text-xs text-slate-300 font-mono">
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-emerald-400 mr-2"></i>Signals & Systems</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-emerald-400 mr-2"></i>Linear Algebra & Calculus</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-emerald-400 mr-2"></i>Circuit Analysis & Design</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-emerald-400 mr-2"></i>Digital Logic & Microcontrollers</li>
+            <li class="flex items-center"><i class="fa-solid fa-angle-right text-emerald-400 mr-2"></i>Mathematical Modeling</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Credentials Section -->
+  <section id="education" class="py-20 relative z-10 bg-slate-900/30 border-t border-slate-800/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Academic Foundation</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">Education & Alma Mater</h2>
+      </div>
+
+      <div class="glass-panel p-8 rounded-2xl border border-slate-800 relative glow-card">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start space-x-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-2xl flex-shrink-0">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Bachelor of Science in Electrical Engineering</h3>
+              <p class="text-cyan-400 font-medium text-sm mt-0.5">University of Engineering and Technology (UET), Peshawar</p>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                Comprehensive training in engineering mathematics, circuit theory, control systems, computational algorithms, and electrical systems. Rigorous problem-solving curriculum forming the basis of advanced algorithmic modeling and AI workflows.
+              </p>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+              UET Peshawar Alumni
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Services & Solutions (from LinkedIn) -->
+  <section id="services" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Services & Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">What I Bring to Your Team</h2>
+        <p class="text-slate-400 mt-2 text-sm">
+          Tailored engineering services across custom software, machine learning, analytics, and full-stack systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Service 1: Custom Software Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Custom Software Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Engineering robust web platforms, automated business tools, and scalable SaaS architectures tailored to complex operational workflows.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">SaaS Systems</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">APIs</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Business Analytics & Predictive AI -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-4">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Business Analytics</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Unlocking predictive insights, sales forecasting models (like SalesPro AI), and trend analysis to drive data-informed decision-making.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Predictive ML</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Forecasting</span>
+          </div>
+        </div>
+
+        <!-- Service 3: Web Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-4">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Web Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Modern, responsive front-ends and full-stack solutions built with Next.js 14, React, Vite, and Tailwind CSS with high performance.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">Next.js 14</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">PWAs</span>
+          </div>
+        </div>
+
+        <!-- Service 4: Database Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Database Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Designing schema models, real-time Google Sheets API sync pipelines, and data persistence layers for customer and inventory tracking.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Pipelines</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">API Sync</span>
+          </div>
+        </div>
+
+        <!-- Service 5: IT Consulting -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">IT Consulting</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Advising on AI feasibility, LLM agent integration (Gemini, RAG), modern tech stack selection, and software architecture planning.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">AI Strategy</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">Architecture</span>
+          </div>
+        </div>
+
+        <!-- Service 6: Technical Support & Project Management -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Technical Support & Management</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            End-to-end milestone management, code maintenance, Vercel/cloud deployments, and continuous system support.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Delivery</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Maintenance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Direct Action Section -->
+  <section id="contact" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Direct Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Get In Touch</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Build Something Exceptional Together.</h2>
+          <p class="text-slate-300 text-base leading-relaxed">
+            Whether you have an upcoming AI project, require predictive machine learning models, or are seeking a versatile Electrical Engineer & Full-Stack Developer for your team, my inbox and WhatsApp are always open.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            
+            <!-- WhatsApp Action Card -->
+            <a href="https://wa.me/923026784114?text=Hi%20Khizar,%20I'm%20contacting%20you%20from%20your%20portfolio!" target="_blank" rel="noopener noreferrer" class="glass-panel p-4 rounded-xl border border-emerald-500/30 hover:border-emerald-400 transition flex items-center space-x-4 group block">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-white transition">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 font-mono block">Instant WhatsApp Chat</span>
+                <span class="text-base font-bold text-white group-hover:text-emerald-400 transition">+92 302 6784114</span>
+              </div>
+            </a>
+
+            <!-- Email Action Card -->
+            <a href="mailto:khizar3959@gmail.com" class="glass-panel p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-400 transition flex items-center space-x-4 group block">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl group-hover:bg-cyan-500 group-hover:text-white transition">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 font-mono block">Direct Email</span>
+                <span class="text-base font-bold text-white group-hover:text-cyan-400 transition">khizar3959@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- Social Links Card -->
+            <div class="glass-panel p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">Professional Profiles:</span>
+              <div class="flex items-center space-x-3">
+                <a href="https://github.com/khizar3959" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/khizar-hayat-513a5ab6/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:bg-slate-700 transition" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-8 rounded-2xl border border-slate-800 glow-card">
+            <h3 class="text-xl font-bold text-white mb-2">Send a Direct Message</h3>
+            <p class="text-slate-400 text-xs mb-6 font-mono">Fill in your requirements and it will open directly in your mail client.</p>
+
+            <div id="formSuccess" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex items-center space-x-3">
+              <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+              <span>Thank you! Your message client has been triggered. Looking forward to speaking!</span>
+            </div>
+
+            <form id="portfolioContactForm" class="space-y-4">
+              <div>
+                <label for="senderName" class="block text-xs font-mono text-slate-300 mb-1.5">Your Name</label>
+                <input type="text" id="senderName" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-cyan-400 focus:outline-none text-white text-sm placeholder-slate-500 transition">
+              </div>
+
+              <div>
+                <label for="senderEmail" class="block text-xs font-mono text-slate-300 mb-1.5">Your Email</label>
+                <input type="email" id="senderEmail" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-cyan-400 focus:outline-none text-white text-sm placeholder-slate-500 transition">
+              </div>
+
+              <div>
+                <label for="senderMessage" class="block text-xs font-mono text-slate-300 mb-1.5">Message / Project Brief</label>
+                <textarea id="senderMessage" rows="4" required placeholder="Hi Khizar, I would like to discuss an AI/Full-Stack project..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-cyan-400 focus:outline-none text-white text-sm placeholder-slate-500 transition resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-cyan-500/25 transition flex items-center justify-center space-x-2">
+                <span>Send Inquiry</span>
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Services & Solutions (from LinkedIn) -->
+  <section id="services" class="py-24 relative z-10 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 font-mono text-sm uppercase tracking-wider font-semibold">Services & Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">What I Bring to Your Team</h2>
+        <p class="text-slate-400 mt-2 text-sm">
+          Tailored engineering services across custom software, machine learning, analytics, and full-stack systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Service 1: Custom Software Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Custom Software Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Engineering robust web platforms, automated business tools, and scalable SaaS architectures tailored to complex operational workflows.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">SaaS Systems</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-300">APIs</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Business Analytics & Predictive AI -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-4">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Business Analytics</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Unlocking predictive insights, sales forecasting models (like SalesPro AI), and trend analysis to drive data-informed decision-making.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Predictive ML</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-indigo-300">Forecasting</span>
+          </div>
+        </div>
+
+        <!-- Service 3: Web Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-4">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Web Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Modern, responsive front-ends and full-stack solutions built with Next.js 14, React, Vite, and Tailwind CSS with high performance.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">Next.js 14</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-blue-300">PWAs</span>
+          </div>
+        </div>
+
+        <!-- Service 4: Database Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Database Development</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Designing schema models, real-time Google Sheets API sync pipelines, and data persistence layers for customer and inventory tracking.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Pipelines</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-300">API Sync</span>
+          </div>
+        </div>
+
+        <!-- Service 5: IT Consulting -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">IT Consulting</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Advising on AI feasibility, LLM agent integration (Gemini, RAG), modern tech stack selection, and software architecture planning.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">AI Strategy</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300">Architecture</span>
+          </div>
+        </div>
+
+        <!-- Service 6: Technical Support & Project Management -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 glass-panel-hover">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Technical Support & Management</h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            End-to-end milestone management, code maintenance, Vercel/cloud deployments, and continuous system support.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Delivery</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">Maintenance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-800/80 glass-panel relative z-10 text-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2">
+        <span class="font-bold text-white tracking-tight">Khizar Hayat</span>
+        <span class="text-slate-500">|</span>
+        <span class="text-xs text-slate-400 font-mono">UET Peshawar • Electrical & AI Engineer</span>
+      </div>
+
+      <div class="text-xs text-slate-400 font-mono">
+        © 2026 Khizar Hayat. All rights reserved.
+      </div>
+
+      <div class="flex items-center space-x-4 text-slate-400 text-sm">
+        <a href="#hero" class="hover:text-cyan-400 transition" title="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
